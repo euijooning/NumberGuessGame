@@ -25,6 +25,9 @@ let opportunity = 5;
 let gameOver = false;
 let opportunityArea = document.getElementById("opportunity-area");
 
+let userLogs = []; // 유저가 입력한 숫자 기록
+
+
 // 랜덤한 번호 추출하기
 function pickRandomNumber() {
     comNumber = Math.floor(Math.random() * 100) + 1; // 1부터 100으로
@@ -43,6 +46,12 @@ function playGame() {
         return; // 함수 종료의 의미. 아래로 넘어가지 않음.
     }
 
+    // 중복 입력 유효성 검사 추가(앞서 입력한 값인지)
+    if(userLogs.includes(userValue)) {
+        resultArea.textContent = "이미 입력한 숫자입니다. 이전과 다른 숫자를 입력하세요.";
+        return; // 함수 종료
+    }
+
     opportunity--;
     console.log("opportunity", opportunity);
     opportunityArea.textContent = `남은 기회 : ${opportunity} 번`;
@@ -57,6 +66,11 @@ function playGame() {
         // console.log("정답입니다.");
         resultArea.textContent = "정답입니다!";
     }
+
+    // 유저가 입력한 기록
+    userLogs.push(userValue); // 이 배열에 유저가 입력한 기록을 다 저장
+    console.log(userLogs);
+
 
     if(opportunity < 1) {
         gameOver = true;
