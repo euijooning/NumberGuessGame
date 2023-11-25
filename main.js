@@ -30,7 +30,7 @@ function generateRandomNumber() {
 
 
 function playGame() {
-    let userGuess = inputField.value;
+    let userGuess = parseInt(inputField.value, 10);
 
     // 숫자입력 유효성 검사 추가(범위 안인지)
     if(userGuess < 1 || userGuess > 100) {
