@@ -27,6 +27,14 @@ let opportunityArea = document.getElementById("opportunity-area");
 
 let userLogs = []; // 유저가 입력한 숫자 기록
 
+// userInput.addEventListener("focus", function(){
+//     userInput.value = ""
+// });//focus 되면 입력칸 자동으로 지워주기
+userInput.addEventListener("focus", clearUserInputArea);
+
+function clearUserInputArea() {
+    userInput.value = "";
+}
 
 // 랜덤한 번호 추출하기
 function pickRandomNumber() {
