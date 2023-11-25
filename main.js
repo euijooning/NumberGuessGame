@@ -29,9 +29,9 @@ let opportunityArea = document.getElementById("opportunity-display");
 
 let userGuessHistory = []; // 유저가 입력한 숫자 기록
 
-inputField.addEventListener("focus", clearUserInputArea);
+inputField.addEventListener("focus", clearUserInputField);
 
-function clearUserInputArea() {
+function clearUserInputField() {
     inputField.value = "";
 }
 
@@ -59,7 +59,6 @@ function playGame() {
     }
 
     opportunity--;
-    console.log("opportunity", opportunity);
     opportunityArea.textContent = `남은 기회 : ${opportunity} 번`;
 
     if(userGuess > comNumber) {
