@@ -93,6 +93,13 @@ function clearData() {
     generateRandomNumber();
     // 멘트도 초기화
     gameResultDisplay.textContent = "결과는~!"
+
+    // 남은 기회 초기화
+    opportunity = 10;
+    opportunityArea.textContent = `남은 기회 : ${opportunity} 번`;
+        
+    // 유저가 입력한 기록 초기화
+    userGuessHistory = [];
 }
 
 generateRandomNumber();
