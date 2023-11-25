@@ -9,21 +9,20 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="pre-title">!!!신나는 레크레이션!!!</h1>
-        <h2 class="title">!숫자 헌팅!</h2>
-        <h1 class="sub-title"><span class="red-text">생사를 건</span> 숫자 업 & 다운</h1>
+        <h1 class="game-title">[숫자 헌팅]</h1>
+        <h1 class="sub-title"><span class="red-text">생사</span>를 건 <span class="red-text">Up</span> & <span class="red-text">Down</span></h1>
         <div id="result-area">
             <img src="image/guess.gif" class="main-image">
             <h1 class="result-text">추측해보시라~</h1>
         </div>
-        <h4 id="opportunity-display">남은 기회 : 10번</h4>
+        <h4 id="opportunity-display">남은 기회 : <span class="count">10</span></h4>
 
         <div class="row d-flex justify-content-center">
-            <div class="col-md-6">
-                <input type="number" id="user-input-field" class="form-control mb-10" placeholder="1부터 100까지 숫자 입력" />
+            <div class="col-md-6"> <!-- 여기 수정 -->
+                <input type="number" id="user-input-field" class="form-control mb-10" placeholder="1부터 100사이의 숫자 입력" />
             </div>
-            <div class="col-md-2">
-                <button class="btn btn-success mb-2 button-style" id="start-button">Go!!</button>
+            <div class="col-md-2"> <!-- 여기 수정 -->
+                <button class="btn btn-info button-style" id="start-button">Go!</button>
             </div>
         </div>    
     </div>

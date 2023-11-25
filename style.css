@@ -8,9 +8,57 @@ body {
     font-family: 'BMEuljiroTTF', sans-serif;
     background-image: url(image/structure.jpg);
     background-size: cover;
-    height: 100vh;
+    height: 98vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+
+.container {
+    border: 8px solid white;
+    border-radius: 23px;
+    text-align: center;
+    background-color: rgba(224, 206, 206, 0.7);
+    height: 75vh; /* 적절한 높이로 조절하세요 */
+}
+
+.border-line {
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+
+.game-title {
+    font-size: 4vw;
+    font-weight: bold;
+}
+
+.main-img {
+    width: 20vw;
+    height: 20vh
+}
+
+.red-text {
+    color: red;
+}
+
+.button-style {
+    border-radius: 50px;
+    font-weight: bold;
+}
+
+.main-image {
+    /* width: 20vw; */
+    height: 30vh
+}
+
+#opportunity-display {
+    color: rgb(7, 11, 240);
+}
+
+.count {
+    font-weight: bold;
 }
