@@ -6,4 +6,11 @@
 
 body {
     font-family: 'BMEuljiroTTF', sans-serif;
+    background-image: url(image/structure.jpg);
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
