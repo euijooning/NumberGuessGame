@@ -13,31 +13,30 @@
 */
 
 let comNumber = 0;
-let playButton = document.getElementById("play-button"); // 웹사이트 전체에서 요소를 id로 가져와서 집어넣겠다.
-// console.log(playButton);
+let startButton = document.getElementById("start-button"); // 웹사이트 전체에서 요소를 id로 가져와서 집어넣겠다.
 
-let userInput = document.getElementById("user-input");
-playButton.addEventListener("click", playGame); // 함수도 매개변수처럼 넘길 수 있다. playGame() 하면 함수를 실행해버림
+let inputField = document.getElementById("user-input-field");
+startButton.addEventListener("click", playGame); // 함수도 매개변수처럼 넘길 수 있다. playGame() 하면 함수를 실행해버림
 
-let resultArea = document.getElementById("result-area");
+let gameResultDisplay = document.getElementById("result-area");
 
-let resetButton = document.getElementById("reset");
-resetButton.addEventListener("click", clearData);
+let resetGameButton = document.getElementById("game-reset-button");
+resetGameButton.addEventListener("click", clearData);
 
 let opportunity = 10;
-let gameOver = false;
-let opportunityArea = document.getElementById("opportunity-area");
+let isGameOver = false;
+let opportunityArea = document.getElementById("opportunity-display");
 
-let userLogs = []; // 유저가 입력한 숫자 기록
+let userGuessHistory = []; // 유저가 입력한 숫자 기록
 
-userInput.addEventListener("focus", clearUserInputArea);
+inputField.addEventListener("focus", clearUserInputArea);
 
 function clearUserInputArea() {
-    userInput.value = "";
+    inputField.value = "";
 }
 
 // 랜덤한 번호 추출하기
-function pickRandomNumber() {
+function generateRandomNumber() {
     comNumber = Math.floor(Math.random() * 100) + 1; // 1부터 100으로
     console.log("정답", comNumber)
 }
@@ -45,17 +44,17 @@ function pickRandomNumber() {
 
 
 function playGame() {
-    let userValue = userInput.value;
+    let userGuess = inputField.value;
 
     // 숫자입력 유효성 검사 추가(범위 안인지)
-    if(userValue < 1 || userValue > 100) {
-        resultArea.textContent = "1 ~ 100 사이의 숫자를 입력하세요."
+    if(userGuess < 1 || userGuess > 100) {
+        gameResultDisplay.textContent = "1 ~ 100 사이의 숫자를 입력하세요."
         return; 
     }
 
     // 중복 입력 유효성 검사 추가(앞서 입력한 값인지)
-    if(userLogs.includes(userValue)) {
-        resultArea.textContent = "이미 입력한 숫자입니다. 이전과 다른 숫자를 입력하세요.";
+    if(userGuessHistory.includes(userGuess)) {
+        gameResultDisplay.textContent = "이미 입력한 숫자입니다. 이전과 다른 숫자를 입력하세요.";
         return; 
     }
 
@@ -63,38 +62,38 @@ function playGame() {
     console.log("opportunity", opportunity);
     opportunityArea.textContent = `남은 기회 : ${opportunity} 번`;
 
-    if(userValue > comNumber) {
-        resultArea.textContent = "DOWN!";
-    } else if(userValue < comNumber) {
-        resultArea.textContent = "UP!";
+    if(userGuess > comNumber) {
+        gameResultDisplay.textContent = "DOWN!";
+    } else if(userGuess < comNumber) {
+        gameResultDisplay.textContent = "UP!";
     } else {
-        resultArea.textContent = "정답입니다!";
+        gameResultDisplay.textContent = "정답입니다!";
 
-        gameOver = true;
+        isGameOver = true;
     }
 
     // 유저가 입력한 기록
-    userLogs.push(userValue); // 이 배열에 유저가 입력한 기록을 다 저장
-    console.log(userLogs);
+    userGuessHistory.push(userGuess); // 이 배열에 유저가 입력한 기록을 다 저장
+    console.log(userGuessHistory);
 
 
     if(opportunity < 1) {
-        gameOver = true;
+        isGameOver = true;
     }
 
-    if(gameOver == true) {
-        playButton.disabled = true;
+    if(isGameOver == true) {
+        startButton.disabled = true;
     }
 }
 
 
 function clearData() {
     // user input 창이 깨끗하게 정리되고
-    userInput.value = "";
+    inputField.value = "";
     // 새 번호가 생성되고
-    pickRandomNumber();
+    generateRandomNumber();
     // 멘트도 초기화
-    resultArea.textContent = "결과는~!"
+    gameResultDisplay.textContent = "결과는~!"
 }
 
-pickRandomNumber();
+generateRandomNumber();
