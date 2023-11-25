@@ -7,6 +7,9 @@
 - Reset 버튼을 누르면 게임이 초기화된다.
 - 유저가 1 ~ 100 범위를 벗어난 숫자를 입력하면 알려주고, 기회를 차감하지 않는다.
 - 유저가 이미 입력한 숫자를 한번 더 입력하면 알려주고, 기회를 차감하지 않는다.
+
+// 추가
+- 기회 10번으로 변경
 */
 
 let comNumber = 0;
@@ -21,7 +24,7 @@ let resultArea = document.getElementById("result-area");
 let resetButton = document.getElementById("reset");
 resetButton.addEventListener("click", clearData);
 
-let opportunity = 5;
+let opportunity = 10;
 let gameOver = false;
 let opportunityArea = document.getElementById("opportunity-area");
 
