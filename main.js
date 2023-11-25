@@ -37,6 +37,12 @@ function playGame() {
     let userValue = userInput.value;
     // console.log(userValue);
 
+    // 숫자입력 유효성 검사 추가(범위 안인지)
+    if(userValue < 1 || userValue > 100) {
+        resultArea.textContent = "1 ~ 100 사이의 숫자를 입력하세요."
+        return; // 함수 종료의 의미. 아래로 넘어가지 않음.
+    }
+
     opportunity--;
     console.log("opportunity", opportunity);
     opportunityArea.textContent = `남은 기회 : ${opportunity} 번`;
