@@ -78,6 +78,10 @@ function playGame() {
 
     if(opportunity < 1) {
         isGameOver = true;
+
+        // 남은 기회가 0일 때 alert로 정답 알려주기
+        alert(`정답은 ${comNumber}입니다! 다시 도전하세요.`);
+        clearData(); // 게임 자동으로 초기화
     }
 
     if(isGameOver == true) {
