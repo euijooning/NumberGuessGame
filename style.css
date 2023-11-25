@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'BMEuljiroTTF';
+    src: local('BMEuljiroTTF'), url('fonts/BMEULJIROTTF.ttf') format('truetype');
+    /* 로컬에 폰트가 없을 경우, 프로젝트 폴더의 font 폴더에서 불러옵니다. */
+}
+
+body {
+    font-family: 'BMEuljiroTTF', sans-serif;
+}
