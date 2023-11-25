@@ -73,6 +73,8 @@ function playGame() {
     } else {
         // console.log("정답입니다.");
         resultArea.textContent = "정답입니다!";
+
+        gameOver = true;
     }
 
     // 유저가 입력한 기록
