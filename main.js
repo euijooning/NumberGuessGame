@@ -19,8 +19,11 @@ playButton.addEventListener("click", playGame); // 함수도 매개변수처럼 
 let resultArea = document.getElementById("result-area");
 
 let resetButton = document.getElementById("reset");
-resetButton.addEventListener("click", clearData)
+resetButton.addEventListener("click", clearData);
 
+let opportunity = 5;
+let gameOver = false;
+let opportunityArea = document.getElementById("opportunity-area");
 
 // 랜덤한 번호 추출하기
 function pickRandomNumber() {
@@ -33,6 +36,11 @@ function pickRandomNumber() {
 function playGame() {
     let userValue = userInput.value;
     // console.log(userValue);
+
+    opportunity--;
+    console.log("opportunity", opportunity);
+    opportunityArea.textContent = `남은 기회 : ${opportunity} 번`;
+
     if(userValue > comNumber) {
         // console.log("Down!");
         resultArea.textContent = "DOWN!";
@@ -43,7 +51,16 @@ function playGame() {
         // console.log("정답입니다.");
         resultArea.textContent = "정답입니다!";
     }
+
+    if(opportunity < 1) {
+        gameOver = true;
+    }
+
+    if(gameOver == true) {
+        playButton.disabled = true;
+    }
 }
+
 
 function clearData() {
     // user input 창이 깨끗하게 정리되고
