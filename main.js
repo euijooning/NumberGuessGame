@@ -100,6 +100,9 @@ function clearData() {
         
     // 유저가 입력한 기록 초기화
     userGuessHistory = [];
+
+    // Start 버튼 다시 활성화
+    startButton.disabled = false;
 }
 
 generateRandomNumber();
