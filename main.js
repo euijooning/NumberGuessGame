@@ -12,9 +12,12 @@
 let comNumber = 0;
 let playButton = document.getElementById("play-button"); // 웹사이트 전체에서 요소를 id로 가져와서 집어넣겠다.
 // console.log(playButton);
-let userInput = document.getElementById("user-input")
 
+let userInput = document.getElementById("user-input")
 playButton.addEventListener("click", playGame); // 함수도 매개변수처럼 넘길 수 있다. playGame() 하면 함수를 실행해버림
+
+let resultArea = document.getElementById("result-area")
+
 
 
 // 랜덤한 번호 추출하기
@@ -27,5 +30,15 @@ pickRandomNumber();
 
 function playGame() {
     let userValue = userInput.value;
-    console.log(userValue);
+    // console.log(userValue);
+    if(userValue > comNumber) {
+        // console.log("Down!");
+        resultArea.textContent = "DOWN!";
+    } else if(userValue < comNumber) {
+        // console.log("Up!");
+        resultArea.textContent = "UP!";
+    } else {
+        // console.log("정답입니다.");
+        resultArea.textContent = "정답입니다!";
+    }
 }
