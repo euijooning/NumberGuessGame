@@ -1,4 +1,7 @@
-# 👉 숫자 헌팅
+# <div align="center">  <img src="https://github.com/euijooning/NumberHuntGame/assets/49093239/da9f8c32-2e82-4a8c-bbb1-d0e4e6455e25" alt="Image 1"> </div>
+
+<br>
+
 ![image](https://github.com/euijooning/NumberHuntGame/assets/49093239/810d6d0c-a4ac-487c-92e3-3974f999ec81)
 
 <br>
