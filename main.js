@@ -58,13 +58,13 @@ function playGame() {
 
     // 결과 검증
     if(userGuess > comNumber) {
-        gameResultAreaImage.src = "image/down.gif";
+        gameResultAreaImage.src = "https://blog.kakaocdn.net/dn/b2mRXT/btsAULzfOA7/VPaMegWVBAU0v2R860Kkv1/img.gif";
         gameResultDisplay.textContent = "DOWN!";
     } else if(userGuess < comNumber) {
-        gameResultAreaImage.src = "image/up.gif";
+        gameResultAreaImage.src = "https://blog.kakaocdn.net/dn/Pz3Ez/btsAUIoYPyD/NJtlVqWCfktokMbr4LTKV0/img.gif";
         gameResultDisplay.textContent = "UP!";
     } else {
-        gameResultAreaImage.src = "image/correct.gif";
+        gameResultAreaImage.src = "https://blog.kakaocdn.net/dn/kWrTU/btsASF7PnrW/OqhL73rrkWbcjEddcwth8k/img.gif";
         gameResultDisplay.textContent = "정답입니다!";
         isGameOver = true;
     }
